@@ -1,0 +1,47 @@
+1.
+public class Program
+{
+    public static void main(String[] args)
+    {
+String name= "Toyota";
+double engine = 4.7;
+int year = 2019;
+
+System.out.println("Name: " + name);
+System.out.println("Engine: " + engine);
+System.out.println("Year: " + year);
+}
+}
+
+2.
+public class Main {
+    public static void main(String[] args) {
+        //расскоментируйте нужные строки
+        //System.out.println("Java is lame");
+        System.out.println("Java is awesome");
+    }
+}
+
+3.
+public class Program1 {
+    public static void main(String[] args){
+        int beer = 64;
+        int whisky = 23;
+        System.out.println (64+23);
+    }
+}
+
+4.
+import java.util.Scanner;
+public class Main1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        //принятие начальных очнов
+        int initScore = scanner.nextInt();
+        int scoreTom = initScore;
+        int scoreBob = initScore;
+        System.out.println("Round 1 results:");
+        System.out.println(++scoreTom);
+        System.out.println((--scoreBob));
+    }
+}
