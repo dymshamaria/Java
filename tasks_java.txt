@@ -43,6 +43,6 @@ public class Main1 {
         int scoreBob = initScore;
         System.out.println("Round 1 results:");
         System.out.println(++scoreTom);
-        System.out.println((--scoreBob));
+        System.out.println(--scoreBob);
     }
 }
