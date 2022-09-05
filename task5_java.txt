@@ -1,0 +1,201 @@
+Классы и объекты
+1.
+import java.util.Scanner;
+public class Main1 {
+    public static void main(String[] args);
+
+    {
+        Scanner read = new Scanner(System.in);
+        int numberOfPeople = read.nextInt();
+        for (int i = 0; i < numberOfPeople; i++) {
+            welcome();
+        }
+    }
+    public static void welcome(){
+        System.out.println("Welcome!");
+    }
+}
+
+2.
+import java.util.Scanner;
+public class Main1 {
+    public static void main(String[] args);
+
+    {
+        Scanner read = new Scanner(System.in);
+        double score1 = read.nextDouble();
+        double score2 = read.nextDouble();
+        double score3 = read.nextDouble();
+        double score4 = read.nextDouble();
+        double avgScore = getAverageScore(score1, score2, score3, score4);
+        System.out.println(avgScore);
+    }
+
+    public static double getAverageScore(double x, double y, double a, double b) {
+        return ((x + y + a + b) / 4);
+    }
+}
+
+3.
+public class Main {
+    public static void main(String[] args) {
+        Loading loading = new Loading();
+        loading.LoadingMessage();
+    }
+}
+class Loading {
+    public static void LoadingMessage() {
+        System.out.println("Loading");
+    }
+}
+
+4.
+import java.util.Scanner; 
+ 
+public class Main { 
+ 
+   public static void main(String[] args) { 
+       Scanner read = new Scanner(System.in); 
+       String firstName = read.nextLine(); 
+       String secondName = read.nextLine(); 
+       int age = read.nextInt(); 
+       int roomNumber = read.nextInt(); 
+       Customer customer = new Customer(); 
+       //присвойте данные клиента атрибутам объекта 
+      customer.firstName = firstName;
+      customer.secondName = secondName;
+      customer.age = age;
+      customer.roomNumber = roomNumber;  
+       customer.saveCustomerInfo(); 
+   } 
+} 
+ 
+class Customer { 
+   //добавьте все необходимые атрибуты здесь 
+   String firstName;
+   String  secondName;
+   int age;
+   int roomNumber; 
+   
+   public void saveCustomerInfo() { 
+       System.out.println("First name: " + firstName); 
+       System.out.println("Second name: " + secondName); 
+       System.out.println("Age: " + age); 
+       System.out.println("Room number: " + roomNumber); 
+   } 
+}
+
+5.
+public class Program 
+{ 
+ public static void main(String[] args) { 
+     Country c = new Country(); 
+     c.name = "France"; 
+     c.capital = "Paris"; 
+     System.out.println("Country:  " + c.name); 
+     System.out.println("Capital:  " + c.capital); 
+} 
+  
+  
+} 
+class Country{ 
+    //измените код ниже 
+    public String  name; 
+    public String capital; 
+}
+
+6.
+import java.util.Scanner; 
+ 
+class Main { 
+ 
+   public static void main(String[] args) { 
+       Scanner read = new Scanner(System.in); 
+       String name = read.nextLine(); 
+       int age = read.nextInt(); 
+       Student student = new Student(); 
+       student.name = name; 
+       student.setAge(age); 
+       //установите возраст через метод Setter 
+        
+        
+       System.out.println("Name: " + student.name); 
+       System.out.println("Age: " + student.getAge()); 
+   } 
+} 
+ 
+class Student { 
+ 
+   public String name; 
+   private int age; 
+    
+   public int getAge() { 
+       //завершите метод Getter 
+       return age; 
+   } 
+   public void setAge(int age) { 
+       //завершите метод Setter 
+       if(age<0){
+           System.out.println("Invalid age");
+           this.age=0;
+           }
+           else
+this.age=age; 
+   } 
+}
+
+7.
+import java.util.Scanner; 
+ 
+class Main { 
+   public static void main(String[] args) { 
+       Scanner read = new Scanner(System.in); 
+       String movie = read.nextLine(); 
+       int row = read.nextInt(); 
+       int seat = read.nextInt(); 
+       Ticket ticket = new Ticket(movie, row, seat); 
+       System.out.println("Movie: " + ticket.getMovie()); 
+       System.out.println("Row: " + ticket.getRow()); 
+       System.out.println("Seat: " + ticket.getSeat()); 
+   } 
+} 
+ 
+class Ticket { 
+   private String movie; 
+   private int row; 
+   private int seat; 
+ 
+   //завершите конструктор 
+   public Ticket(String movie, int row, int seat) { 
+       this.movie=movie;
+       this.row=row;
+       this.seat=seat; 
+   } 
+ 
+   public String getMovie() { 
+       return movie; 
+   } 
+ 
+   public int getRow() { 
+       return row; 
+   } 
+ 
+   public int getSeat() { 
+       return seat; 
+   } 
+}
+
+8.
+import java.util.Scanner; 
+ 
+class Main { 
+   public static void main(String[] args) { 
+       Scanner read = new Scanner(System.in); 
+       int num1 = read.nextInt(); 
+       int num2 = read.nextInt(); 
+ 
+       //введите код сюда 
+       double main = Math.pow(num1, num2);
+       System.out.println(main); 
+   } 
+}
