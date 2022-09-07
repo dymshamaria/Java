@@ -1,0 +1,255 @@
+Больше о классах
+1.
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args){
+        Scanner read = new Scanner(System.in);
+        int a = read.nextInt();
+
+        Pupil pupil = new Pupil();
+        pupil.setAge(a);
+    }
+}
+class Pupil{
+    private int age;
+    public void setAge(int a){
+        if (a>6) {
+            age = a;
+            System.out.println("Welcome");
+        }else {
+            System.out.println("Sorry");
+        }
+        }
+        public int getAge(){
+        return age;
+    }
+}
+
+2.
+class Standard{
+    public void draw(){
+        System.out.println("Drawing");
+    }
+    public void write(){
+        System.out.println("Writing");
+    }
+}
+
+class Pro extends Standard{
+    public void useEffects(){
+        System.out.println("Using Effects");
+    }
+    public void changeResolution(){
+        System.out.println("Changing Resolution");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Standard standard1 = new Standard();
+        Pro pro1 = new Pro();
+
+        standard1.draw();
+        standard1.write();
+
+        pro1.draw();
+        pro1.write();
+        pro1.useEffects();
+        pro1.changeResolution();
+    }
+}
+
+3.
+class Main{
+    public static void main(String [] args) {
+        Vehicle vehicle = new Vehicle();
+        Vehicle electric = new ElectricVehicle();
+        Vehicle hybrid = new HybridVehicle();
+
+        vehicle.start();
+        vehicle.resource();
+        electric.start();
+        electric.resource();
+        hybrid.start();
+        hybrid.resource();
+    }
+}
+class Vehicle{
+    public void start(){
+        System.out.println("Starting");
+    }
+    public void resource(){
+        System.out.println("I use electricity");
+    }
+}
+
+class HybridVehicle extends Vehicle{
+    public void resource(){
+        System.out.println("I use both petrol and electricity");
+    }
+}
+
+4.
+public class Main{
+    public static void main(String[] args){
+        int a=5;
+        double b = 10.2;
+        System.out.println(doubleTheValue(a));
+        System.out.println(doubleTheValue(b));
+    }
+    public static int doubleTheValue(int a)
+    {
+        return a*2;
+    }
+    public static double
+    doubleTheValue(double b){
+        return b*2;
+    }
+}
+
+5.
+class Main{
+    public static void main(String[] args){
+        Monopoly monopoly = new Monopoly();
+        Chess chess = new Chess();
+        Battleships battleships = new Battleships();
+
+        monopoly.play();
+        chess.play();
+        battleships.play();
+    }
+}
+    abstract class Game {
+        public String name;
+
+        abstract String getName();
+
+        abstract void play();
+    }
+    class Monopoly extends Game {
+        String getName() {
+            return name;
+        }
+
+        void play() {
+            System.out.println("Buy all property.");
+        }
+    }
+
+    class Chess extends Game {
+        String getName() {
+            return name;
+        }
+
+        void play() {
+            System.out.println("Kill the enemy king.");
+        }
+    }
+
+    class Battleships extends Game{
+    String getName() {
+        return name;
+    }
+    void play(){
+        System.out.println("Sink all ships.");
+    }
+}
+
+6.
+class Main{
+    public static void main(String[] args){
+        Animal dog = new Dog();
+        Animal cat = new Cat();
+        dog.swim();
+        dog.play();
+        cat.swim();
+        cat.play();
+    }
+}
+interface Swimmer {
+    void swim();
+}
+interface Player {
+    void play();
+}
+abstract class Animal implements Swimmer, Player{
+}
+
+class Dog extends Animal{
+    public void swim(){
+        System.out.println("Dog is swimming");
+    }
+    public void play(){
+        System.out.println("Dog is playing");
+    }
+}
+class Cat extends Animal{
+        public void swim() {
+            System.out.println("Cat is swimming");
+        }
+        public void play(){
+            System.out.println("Cat is playing");
+        }
+    }
+
+7.
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args){
+        Scanner read = new Scanner(System.in);
+        char a = read.nextInt().charAt(0);
+        int b = (int) a;
+        System.out.println(b);
+    }
+}
+
+8.
+public class Main {
+    public static void main(String[] args) {
+        Purchase customer = new Purchase();
+        Purchase specialCustomer = new Purchase() {
+            public int totalAmount(int price) {
+                return price - (price * 20) / 100;
+            }
+        };
+        System.out.println(customer.totalAmount(1000));
+        System.out.println(specialCustomer.totalAmount(100000));
+    }
+}
+class Purchase{
+    int price;
+    public int totalAmount(int price){
+        return price - (price*10)/100;
+            }
+        }
+
+9.
+import javax.sound.midi.SysexMessage;
+
+class Main{
+    public static void main(String[] args)
+    {
+        Player player1 = new Player(Difficulty.EASY);
+        Player player2 = new Player(Difficulty.MEDIUM);
+        Player player3 = new Player(Difficulty.HARD);
+    }
+}
+enum Difficulty {
+    EASY,
+    MEDIUM,
+    HARD
+}
+public class Player{
+    Player(Difficulty diff){
+        switch (diff){
+            case EASY:
+                System.out.println("You have 3000 bullets");
+                break;
+            case MEDIUM:
+                System.out.println("You have 2000 bullets");
+                break;
+            case  HARD:
+                System.out.println("You have 1000 bullets");
+                break;
+        }
+    }
+}
